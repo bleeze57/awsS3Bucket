@@ -1,0 +1,22 @@
+<% for(var i = 0; i < buckets.length; i++) { %>
+    <tr>
+        <td><%=buckets[i].name%></td>
+        <td><%=buckets[i].email%></td>
+        <td><%=buckets[i].reqLevel%></td>
+        <td><%=buckets[i].bucketName%></td>
+        <td><%=buckets[i].bucketRegion%></td>
+        <td><%=buckets[i].publicAccess%></td>
+        <td><%=buckets[i].versioning%></td>
+        <td>
+            <a href="/update-user?id=<%= buckets[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= buckets[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+            <a href="/edit-policy?=<%=buckets[i]._id%>" class="btn border-shadow edit">
+                <span class="text-gradient"><i class="fas fa-plus"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>

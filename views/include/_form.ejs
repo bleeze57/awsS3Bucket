@@ -1,0 +1,76 @@
+<form action="/api/users" method="POST" id="add_user">
+    <div class="new_bucket">
+        <div class="form-group">
+            <label for="name" class ="text-light">Name</label>
+            <input type="text" name="name" value="" placeholder="Mukmen">
+        </div>
+        <div class="form-group">
+            <label for="Email" class ="text-light">Email</label>
+            <input type="text" name="email" value="" placeholder="Mukmen@aerodyne.group">
+        </div>
+        <div class="form-group">
+            <label for="reqLevel" class ="text-light">Request Level</label>
+            <div class="radio inline">
+                <input type="radio" name="reqLevel" value="Manager" >
+                <label for="reqLevel" class="text-light">Manager</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" name="reqLevel" value="Pilot" >
+                <label for="reqLevel" class ="text-light">Pilot</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bucketName" class ="text-light">Bucket Name</label>
+            <input type="text" name="bucketName" value="" placeholder="aerodyne-group">
+        </div>
+        
+        <div class="form-group">
+            <label for="bucketRegion" class="text-light">Bucket Region</label>
+            <select name="bucketRegion" >
+                <option value="us-east-1">us-east-1(N. Virginia)</option>
+                <option value="us-east-2">us-east-2(Ohio)</option>
+                <option value="us-west-1">us-east-1(N. California)</option>
+                <option value="us-west-2">us-east-2(Oregon)</option>
+                <option value="ap-south-1">ap-south-1(Mumbai)</option>
+                <option value="ap-northeast-3">ap-northeast-3(Osaka)</option>
+                <option value="ap-northeast-2">ap-northeast-2(Seoul)</option>
+                <option value="ap-northeast-1">ap-northeast-1(Singapore)</option>
+                <option value="ap-southeast-2">ap-southeast-2(Sydney)</option>
+                <option value="ap-southeast-1">ap-southeast-1(Tokyo)</option>
+                <option value="ca-central-1">ca-central-1(Canada)</option>
+                <option value="eu-central-1">eu-central-1(Frankfurt)</option>
+                <option value="eu-west-1">eu-west-1(Ireland)</option>
+                <option value="eu-west-2">eu-west-2(London)</option>
+                <option value="eu-west-3">eu-west-3(Paris)</option>
+                <option value="eu-north-1">eu-north-1(Stockholm)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="publicAccess" class ="text-light">Public Access</label>
+            <div class="radio inline">
+                <input type="radio" name="publicAccess" value="Enable" >
+                <label for="publicAccess" class ="text-light">Enable</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" name="publicAccess" value="disable" >
+                <label for="publicAccess" class ="text-light">Disable</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="versioning" class ="text-light">Versioning</label>
+            <div class="radio inline">
+                <input type="radio" name="versioning" value="Enable" >
+                <label for="versioning" class ="text-light">Enable</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" name="versioning" value="disable" >
+                <label for="versioning" class ="text-light">Disable</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Create Bucket</button>
+        </div>
+    </div>
+</form>
+

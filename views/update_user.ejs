@@ -1,0 +1,105 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/home"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update User</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+ <form method="POST" id="update_user" class="update_form">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class ="text-light">Name</label>
+            <input type="hidden" name="id" value="<%=buckets._id%>">
+            <input type="text" name="name" value="<%=buckets.name%>" placeholder="Mukmen">
+        </div>
+        <div class="form-group">
+            <label for="Email" class ="text-light">Email</label>
+            <input type="text" name="email" value="<%=buckets.email%>" placeholder="Mukmen@aerodyne.group">
+        </div>
+        <div class="form-group">
+            <label for="reqLevel" class ="text-light">Request Level</label>
+            <div class="radio inline">
+                <input type="radio" name="reqLevel" value="Manager" <%=buckets.reqLevel=='Manager'?'checked':''%>>
+                <label for="reqLevel" class="text-light">Manager</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" name="reqLevel" value="Pilot" <%=buckets.reqLevel=='Pilot'?'checked':''%>>
+                <label for="reqLevel" class ="text-light">Pilot</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bucketName" class ="text-light">Bucket Name</label>
+            <input type="text" name="bucketName" value="<%=buckets.bucketName%>" placeholder="aerodyne-group">
+        </div>
+        
+        <div class="form-group">
+            <label for="bucketRegion" class="text-light">Bucket Region</label>
+            <select name="bucketRegion" value="" >
+                <option value="us-east-1" <%= buckets.bucketRegion === "us-east-1" ? 'selected' : '' %>>us-east-1(N. Virginia)</option>
+                <option value="us-east-2"<%= buckets.bucketRegion === "us-east-2" ? 'selected' : '' %>>us-east-2(Ohio)</option>
+                <option value="us-west-1"<%= buckets.bucketRegion === "us-west-1" ? 'selected' : '' %>>us-west-1(N. California)</option>
+                <option value="us-west-2"<%= buckets.bucketRegion === "us-west-2" ? 'selected' : '' %>>us-east-2(Oregon)</option>
+                <option value="ap-south-1"<%= buckets.bucketRegion === "ap-south-1" ? 'selected' : '' %>>ap-south-1(Mumbai)</option>
+                <option value="ap-northeast-3"<%= buckets.bucketRegion === "ap-northeast-3" ? 'selected' : '' %>>ap-northeast-3(Osaka)</option>
+                <option value="ap-northeast-2"<%= buckets.bucketRegion === "ap-northeast-2" ? 'selected' : '' %>>ap-northeast-2(Seoul)</option>
+                <option value="ap-northeast-1"<%= buckets.bucketRegion === "ap-northeast-1" ? 'selected' : '' %>>ap-northeast-1(Singapore)</option>
+                <option value="ap-southeast-2"<%= buckets.bucketRegion === "ap-southeast-2" ? 'selected' : '' %>>ap-southeast-2(Sydney)</option>
+                <option value="ap-southeast-1"<%= buckets.bucketRegion === "ap-southeast-1" ? 'selected' : '' %>>ap-southeast-1(Tokyo)</option>
+                <option value="ca-central-1"<%= buckets.bucketRegion === "ca-central-1" ? 'selected' : '' %>>ca-central-1(Canada)</option>
+                <option value="eu-central-1"<%= buckets.bucketRegion === "eu-central-1" ? 'selected' : '' %>>eu-central-1(Frankfurt)</option>
+                <option value="eu-west-1"<%= buckets.bucketRegion === "eu-west-1" ? 'selected' : '' %>>eu-west-1(Ireland)</option>
+                <option value="eu-west-2"<%= buckets.bucketRegion === "eu-west-2" ? 'selected' : '' %>>eu-west-2(London)</option>
+                <option value="eu-west-3"<%= buckets.bucketRegion === "eu-west-3" ? 'selected' : '' %>>eu-west-3(Paris)</option>
+                <option value="eu-north-1"<%= buckets.bucketRegion === "eu-north-1" ? 'selected' : '' %>>eu-north-1(Stockholm)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="publicAccess" class ="text-light">Public Access</label>
+            <div class="radio inline">
+                <input type="radio" name="publicAccess" value="Enable" <%=buckets.publicAccess=='Enable'?'checked':''%>>
+                <label for="publicAccess" class ="text-light">Enable</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" name="publicAccess" value="disable" <%=buckets.publicAccess=='disable'?'checked':''%>>
+                <label for="publicAccess" class ="text-light">Disable</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="versioning" class ="text-light">Versioning</label>
+            <div class="radio inline">
+                <input type="radio" name="versioning" value="Enable" <%=buckets.versioning=='Enable'?'checked':''%>>
+                <label for="versioning" class ="text-light">Enable</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" name="versioning" value="disable" <%=buckets.versioning=='disable'?'checked':''%>>
+                <label for="versioning" class ="text-light">Disable</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
